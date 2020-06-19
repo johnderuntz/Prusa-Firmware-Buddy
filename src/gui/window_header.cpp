@@ -50,7 +50,7 @@ void window_header_init(window_header_t *window) {
     update_ETH_icon(window);
 #endif //BUDDY_ENABLE_ETHERNET
 
-    display->fill_rect(gui_defaults.header_sz, window->color_back); // clear the window before drawing
+    display::FillRect(gui_defaults.header_sz, window->color_back); // clear the window before drawing
 }
 
 void window_header_done(window_header_t *window) {}
@@ -62,7 +62,7 @@ void window_header_draw(window_header_t *window) {
     }
 
     rect_ui16_t rc = {
-        window->win.rect.x + 10, window->win.rect.y,
+        uint16_t(window->win.rect.x + 10), window->win.rect.y,
         window->win.rect.h, window->win.rect.h
     };
 
@@ -70,7 +70,7 @@ void window_header_draw(window_header_t *window) {
         render_icon_align(rc, window->id_res,
             window->color_back, RENDER_FLG(ALIGN_CENTER, 0));
     } else {
-        display->fill_rect(rc, window->color_back);
+        display::FillRect(rc, window->color_back);
     }
 
     uint16_t icons_width = 10 + 36;

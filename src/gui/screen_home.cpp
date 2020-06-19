@@ -145,7 +145,7 @@ int screen_home_event(screen_t *screen, window_t *window, uint8_t event, void *p
     }
     if ((event == WINDOW_EVENT_LOOP) && pw->logo_invalid) {
 #ifdef _DEBUG
-        display->draw_text(rect_ui16(180, 31, 60, 13), "DEBUG", resource_font(IDR_FNT_SMALL), COLOR_BLACK, COLOR_RED);
+        display::DrawText(rect_ui16(180, 31, 60, 13), "DEBUG", resource_font(IDR_FNT_SMALL), COLOR_BLACK, COLOR_RED);
 #endif //_DEBUG
         pw->logo_invalid = 0;
     }
@@ -275,4 +275,4 @@ screen_t screen_home = {
     0,                          //pdata
 };
 
-extern "C" screen_t *const get_scr_home() { return &screen_home; }
+screen_t *const get_scr_home() { return &screen_home; }

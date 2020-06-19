@@ -2,7 +2,6 @@
 #include "window_menu.h" //C compatible, todo remove
 #include "window_menu.hpp"
 #include "gui.h"
-#include "cmath_ext.h"
 #include "sound_C_wrapper.h"
 #include "resource.h"
 #include "IWindowMenuItem.hpp"
@@ -100,7 +99,7 @@ void window_menu_t::Increment(int dif) {
 //non member fce
 
 void window_menu_init(window_menu_t *window) {
-    display->draw_rect(window->win.rect, window->color_back);
+    display::DrawRect(window->win.rect, window->color_back);
     gui_timer_create_txtroll(TEXT_ROLL_INITIAL_DELAY_MS, window->win.id);
 }
 
@@ -148,7 +147,7 @@ void window_menu_draw(window_menu_t *window) {
 
     if (rc_win.h) {
         rc_win.y += i * item_height;
-        display->fill_rect(rc_win, window->color_back);
+        display::FillRect(rc_win, window->color_back);
     }
     window->win.flg &= ~WINDOW_FLG_INVALID;
 }
