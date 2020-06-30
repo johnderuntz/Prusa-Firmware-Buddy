@@ -506,9 +506,15 @@ if(GUI)
             src/gui/dialogs/DialogRadioButton.cpp
             src/gui/dialogs/DialogLoadUnload.cpp
             src/gui/dialogs/window_dlg_load_unload.cpp
+<<<<<<< HEAD
             src/gui/dialogs/window_dlg_wait.cpp
             src/gui/dialogs/window_dlg_popup.cpp
             src/gui/dialogs/window_dlg_preheat.cpp
+=======
+            src/gui/dialogs/window_dlg_wait.c
+            src/gui/dialogs/window_dlg_popup.c
+            src/gui/dialogs/window_dlg_preheat.c
+>>>>>>> RELEASE-4.1.0
             src/gui/screen_menu_temperature.cpp
             src/gui/resource.c
             src/gui/window_file_list.cpp

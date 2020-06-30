@@ -10,7 +10,6 @@
 #include "window_dlg_load_unload.h"
 #include "screens.h"
 #include "dbg.h"
-#include "DialogHandler.hpp"
 #include "../lang/i18n.h"
 
 /// Sets temperature of nozzle not to ooze before print (MBL)
@@ -87,12 +86,17 @@ public:
         return header_label;
     }
     virtual void Do() override {
+<<<<<<< HEAD
         if (gui_dlg_unload() == DLG_OK) {
             //opens unload dialog if it is not already openned
             DialogHandler::WaitUntilClosed(ClientFSM::Load_unload, uint8_t(LoadUnloadMode::Unload));
 
             gui_dlg_load() == DLG_OK ? setPreheatTemp() : clrPreheatTemp();
         }
+=======
+        gui_dlg_unload();
+        gui_dlg_load() == DLG_OK ? setPreheatTemp() : clrPreheatTemp();
+>>>>>>> RELEASE-4.1.0
     }
 };
 
